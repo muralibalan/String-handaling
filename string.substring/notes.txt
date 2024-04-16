@@ -1,0 +1,32 @@
+The slice() and substring() methods in JavaScript are used to extract a portion of a string and return it as a new string. While they have similar functionality, there are a few differences between them:
+
+1.Usage of negative indexes:
+
+slice(startIndex, endIndex): Allows the use of negative indexes, which count from the end of the string.
+substring(startIndex, endIndex): Does not accept negative indexes. If negative indexes are provided, they are treated as 0.
+
+2.Return value for out-of-range indexes:
+
+slice(): Returns an empty string if the startIndex is greater than or equal to the length of the string or if startIndex is greater than endIndex.
+substring(): Swaps the startIndex and endIndex if startIndex is greater than endIndex.
+Here are examples to illustrate the differences:
+
+Here are examples to illustrate the differences:
+
+
+const str = "Hello world";
+
+// Using slice()
+console.log(str.slice(0, 5));    // Output: "Hello"
+console.log(str.slice(-5));       // Output: "world"
+console.log(str.slice(3, 8));     // Output: "lo wo"
+console.log(str.slice(8, 3));     // Output: ""
+
+// Using substring()
+console.log(str.substring(0, 5)); // Output: "Hello"
+console.log(str.substring(-5));    // Output: "Hello"
+console.log(str.substring(3, 8));  // Output: "lo wo"
+console.log(str.substring(8, 3));  // Output: "lo wo"
+
+
+In the first example, slice() returns an empty string when startIndex is greater than endIndex. In the second example, substring() swaps the indexes when startIndex is greater than endIndex.
